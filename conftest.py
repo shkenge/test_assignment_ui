@@ -14,6 +14,7 @@ def pytest_runtest_makereport(item):
         item.funcargs['browser'].save_screenshot(screenshot_path)
         logging.info(f"Screenshot captured: {screenshot_path}")
 
+
 @pytest.fixture(scope="function")
 def browser(request):
     logging.info("\nStart browser for test.")

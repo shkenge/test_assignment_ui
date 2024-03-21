@@ -4,23 +4,23 @@ from .pages.locators import MainPageLocators
 from .pages.data_for_tests import MainPageData, LogInPageData, SignUpPageData
 
 
-# def test_text_main_page(browser):
-#     page = MainPage(browser, MainPageData.link_main_page)
-#     page.open()
-#     page.should_be_text_main_page()
-#
-#
-# @pytest.mark.parametrize("click_button, check_url", [
-#     (MainPageLocators.button_home, MainPageData.link_main_page),
-#     (MainPageLocators.button_login, LogInPageData.link_log_in_page),
-#     (MainPageLocators.button_signup, SignUpPageData.link_sign_in_page)
-# ], ids=["test_button_home_page", "test_button_log_in", "test_button_signup"])
-# def test_navigation_bar_buttons(browser, click_button, check_url):
-#     page = MainPage(browser, MainPageData.link_main_page)
-#     page.open()
-#     page.click_button_navigator_bar(click_button)
-#     get_url = browser.current_url
-#     page.should_be_open_page(get_url, check_url)
+def test_text_main_page(browser):
+    page = MainPage(browser, MainPageData.link_main_page)
+    page.open()
+    page.should_be_text_main_page()
+
+
+@pytest.mark.parametrize("click_button, check_url", [
+    (MainPageLocators.button_home, MainPageData.link_main_page),
+    (MainPageLocators.button_login, LogInPageData.link_log_in_page),
+    (MainPageLocators.button_signup, SignUpPageData.link_sign_in_page)
+], ids=["test_button_home_page", "test_button_log_in", "test_button_signup"])
+def test_navigation_bar_buttons(browser, click_button, check_url):
+    page = MainPage(browser, MainPageData.link_main_page)
+    page.open()
+    page.click_button_navigator_bar(click_button)
+    get_url = browser.current_url
+    page.should_be_open_page(get_url, check_url)
 
 
 @pytest.mark.parametrize("size_window", [

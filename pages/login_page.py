@@ -1,10 +1,10 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
+from .data_for_tests import LogInPageData
 import logging
 
+
 class LoginPage(BasePage):
-
-
 
     def login(self, valid_email, random_valid_password):
         self.input_email_login(valid_email)
@@ -23,5 +23,6 @@ class LoginPage(BasePage):
         logging.info("Click button login")
         self.browser.find_element(*LoginPageLocators.login_button).click()
 
-    def should_be_open_profile_page(self):
-        assert self.is_element_present(*LoginPageLocators.login_form).text == "Login", "Login page is not open"
+    def should_not_log_in(self):
+        assert self.browser.find_element(*LoginPageLocators.notification).text == LogInPageData.error_notification, \
+            "Wrong error message when login"

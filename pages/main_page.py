@@ -22,7 +22,3 @@ class MainPage(BasePage):
 
     def should_be_navigator_bar(self, navigator_bar):
         assert navigator_bar.is_displayed(), "Navigator bar is not displayed on the page"
-
-
-
-

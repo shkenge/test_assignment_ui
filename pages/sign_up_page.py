@@ -12,6 +12,11 @@ class SignUpPage(BasePage):
         self.input_password_sign_up(input_random_password)
         self.click_button_sign_up()
 
+    def sign_up_without_name(self, input_email, input_random_password):
+        self.input_email_sign_up(input_email)
+        self.input_password_sign_up(input_random_password)
+        self.click_button_sign_up()
+
     def input_email_sign_up(self, input_email):
         logging.info(f"Input email {input_email}")
         self.browser.find_element(*SignInPageLocators.sign_in_email_input_field).send_keys(input_email)

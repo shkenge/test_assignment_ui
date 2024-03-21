@@ -1,6 +1,7 @@
 from selenium.common.exceptions import NoSuchElementException
 import logging
 
+
 class BasePage():
     def __init__(self, browser, url):
         self.browser = browser

@@ -10,6 +10,15 @@ class MainPageData:
 
 class LogInPageData:
     link_log_in_page = "http://localhost:5000/login"
+    error_notification = "Please check your login details and try again."
+    lower_case_all_fields = ((f"{TestMethods.get_random_string(10)}@{TestMethods.get_random_string(4)}."f"{TestMethods.get_random_string(2)}").lower(),
+                             (f"{TestMethods.get_random_string(10)}").lower(),
+                             (f"{TestMethods.get_random_string(10)}").lower())
+    upper_case_all_fields = (f"{TestMethods.get_random_string(10)}@{TestMethods.get_random_string(4)}."f"{TestMethods.get_random_string(2)}",
+                             f"{TestMethods.get_random_string(10)}",
+                             f"{TestMethods.get_random_string(10)}")
+    login_and_password_with_no_name = ((f"{TestMethods.get_random_string(10)}@{TestMethods.get_random_string(4)}."f"{TestMethods.get_random_string(2)}").lower(),
+                          (f"{TestMethods.get_random_string(10)}").lower())
 
 
 class SignUpPageData:
@@ -134,6 +143,7 @@ email_with_several_dots_in_row_in_domain = (f'{TestMethods.get_random_string(10)
 alert_email_with_several_dots_in_row_in_domain = (f'Недопустимое положение символа "." в адресе '
                                                   f'"{input_random_second_level_domain_email}..'
                                                   f'{input_random_first_level_domain_email}".')
+
 
 class ProfilePageData:
     link_profile_page = "http://localhost:5000/profile"

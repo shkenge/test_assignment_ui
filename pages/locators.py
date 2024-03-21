@@ -15,6 +15,7 @@ class LoginPageLocators:
     login_password_input_field = (By.NAME, 'password')
     login_checkbox_remember_me = (By.CSS_SELECTOR, '[type="checkbox"]')
     login_button = (By.CSS_SELECTOR, '.button.is-block.is-info')
+    notification = (By.CSS_SELECTOR, '.notification.is-danger')
 
 
 class SignInPageLocators:
